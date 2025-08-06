@@ -109,7 +109,7 @@ const Home = () => {
           <div className="profile-placeholder">
             <div className="profile-circle">
               <img 
-                src="/images/shail-shah-profile.jpg" 
+                src={`${process.env.PUBLIC_URL}/images/shail-shah-profile.jpg`}
                 alt="Shail Shah - Frontend Engineer" 
                 className="profile-photo"
                 onError={(e) => {
