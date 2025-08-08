@@ -68,8 +68,8 @@ const About = () => {
         >
           <h2>Who I Am</h2>
           <p>
-            I'm a Master's student in Computer Science at Virginia Tech with a strong passion for 
-            frontend development and user experience design. With experience at Virginia Tech, ClinicSpectrum, 
+            I am a recent graduate with MS in Computer Science from Virginia Tech with passion for full stack development 
+            with expertise in React and Python full stack technologies. With experience at Virginia Tech, ClinicSpectrum, 
             and Heat Technologies, I've developed expertise in React, TypeScript, and modern web technologies.
           </p>
           <p>

@@ -22,23 +22,7 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
         >
           <h3>Shail Shah</h3>
-          <p>Frontend Engineer & Software Developer passionate about creating amazing digital experiences.</p>
-        </motion.div>
-
-        <motion.div
-          className="footer-section"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/skills">Skills</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+          <p>Full Stack Developer passionate about building scalable applications and innovative solutions.</p>
         </motion.div>
 
         <motion.div
@@ -77,10 +61,10 @@ const Footer = () => {
       >
         <div className="footer-bottom-content">
           <p>
-            © {currentYear} Shail Shah. Made with <FaHeart className="heart-icon" /> using React
+            © {currentYear} Shail Shah. Crafted with <FaHeart className="heart-icon" /> by Shail Shah
           </p>
           <p>
-            Built with modern web technologies and ❤️
+            Designed and developed with passion for innovation
           </p>
         </div>
       </motion.div>

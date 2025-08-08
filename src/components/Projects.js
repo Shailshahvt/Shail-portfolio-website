@@ -11,7 +11,8 @@ const Projects = () => {
       id: 1,
       title: 'University Service Operations Portal',
       description: 'Led development of a modular, customer-facing web interface using React, TypeScript, and TailwindCSS. Decreased form completion time for service requests by 35% through optimized state management and reusable components.',
-      image: 'https://via.placeholder.com/400x250/6366f1/ffffff?text=VT+Portal',
+      image: `${process.env.PUBLIC_URL}/images/vt-portal.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center',
       technologies: ['React', 'TypeScript', 'TailwindCSS', 'Jest', 'AWS S3'],
       category: 'frontend',
       github: 'https://github.com',
@@ -22,7 +23,8 @@ const Projects = () => {
       id: 2,
       title: 'ClinicFlow Claims Automation Platform',
       description: 'Built and deployed an end-to-end React + Node.js web application for processing patient claims across 50+ clinics. Reduced average processing latency by 30% via streamlined form and validation logic.',
-      image: 'https://via.placeholder.com/400x250/10b981/ffffff?text=ClinicFlow',
+      image: `${process.env.PUBLIC_URL}/images/clinicflow.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&crop=center',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'GraphQL', 'Chart.js'],
       category: 'fullstack',
       github: 'https://github.com',
@@ -33,7 +35,8 @@ const Projects = () => {
       id: 3,
       title: 'Talent Insights AI Dashboard',
       description: 'Developed a hybrid frontend stack (React + Streamlit) to interface with GPT-4 powered HR analytics, enabling salary benchmarking and policy summary generation for 100K+ records.',
-      image: 'https://via.placeholder.com/400x250/f59e0b/ffffff?text=AI+Dashboard',
+      image: `${process.env.PUBLIC_URL}/images/ai-dashboard.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center',
       technologies: ['React', 'Streamlit', 'GPT-4', 'Python', 'AWS'],
       category: 'fullstack',
       github: 'https://github.com',
@@ -44,7 +47,8 @@ const Projects = () => {
       id: 4,
       title: 'Car Medic Platform',
       description: 'Designed and developed a web application to help users locate nearby car mechanics based on region and service type. Built responsive UI with HTML, CSS, and JavaScript, and implemented backend APIs using Node.js and Express.',
-      image: 'https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Car+Medic',
+      image: `${process.env.PUBLIC_URL}/images/car-medic.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=250&fit=crop&crop=center',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'Google Maps API'],
       category: 'fullstack',
       github: 'https://github.com/Car-Medic/CarMedic',
@@ -55,7 +59,8 @@ const Projects = () => {
       id: 5,
       title: 'Multi-Agent Search Simulation Platform',
       description: 'Developed a distributed agent-based framework for simulating learning behavior over complex landscapes. Integrated Bayesian optimization and RL strategies in a reproducible Python stack, supporting research in adaptive learning systems.',
-      image: 'https://via.placeholder.com/400x250/ef4444/ffffff?text=Multi+Agent',
+      image: `${process.env.PUBLIC_URL}/images/multi-agent.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop&crop=center',
       technologies: ['Python', 'Bayesian Optimization', 'Reinforcement Learning', 'Research'],
       category: 'backend',
       github: 'https://github.com/Shailshahvt/multi-agent-search',
@@ -66,7 +71,8 @@ const Projects = () => {
       id: 6,
       title: 'HR Data Visualization Engine',
       description: 'Significantly boosted interface responsiveness by 50% through implementing skeleton UIs, route-based code splitting, and strategic caching strategies for handling large structured HR datasets.',
-      image: 'https://via.placeholder.com/400x250/06b6d4/ffffff?text=HR+Viz',
+      image: `${process.env.PUBLIC_URL}/images/hr-viz.jpg`,
+      fallbackImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center',
       technologies: ['React', 'D3.js', 'Code Splitting', 'Caching', 'AWS'],
       category: 'frontend',
       github: 'https://github.com',
@@ -144,7 +150,15 @@ const Projects = () => {
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  onError={(e) => {
+                    if (project.fallbackImage) {
+                      e.target.src = project.fallbackImage;
+                    }
+                  }}
+                />
                 {project.featured && (
                   <div className="featured-badge">Featured</div>
                 )}

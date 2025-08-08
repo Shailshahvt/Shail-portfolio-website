@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
@@ -7,12 +6,24 @@ import './Navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
+      
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -20,11 +31,11 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/contact', label: 'Contact' }
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Connect' }
   ];
 
   return (
@@ -35,30 +46,32 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Portfolio
-          </motion.div>
-        </Link>
+        <motion.div 
+          className="nav-logo"
+          onClick={() => {
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            setIsOpen(false);
+          }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          Portfolio
+        </motion.div>
 
         <div className="nav-menu">
           {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-              onClick={() => setIsOpen(false)}
+            <motion.div
+              key={item.id}
+              className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => {
+                document.getElementById(item.id).scrollIntoView({ behavior: 'smooth' });
+                setIsOpen(false);
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {item.label}
-              </motion.div>
-            </Link>
+              {item.label}
+            </motion.div>
           ))}
         </div>
 
@@ -74,14 +87,16 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         {navItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className={`mobile-link ${location.pathname === item.path ? 'active' : ''}`}
-            onClick={() => setIsOpen(false)}
+          <div
+            key={item.id}
+            className={`mobile-link ${activeSection === item.id ? 'active' : ''}`}
+            onClick={() => {
+              document.getElementById(item.id).scrollIntoView({ behavior: 'smooth' });
+              setIsOpen(false);
+            }}
           >
             {item.label}
-          </Link>
+          </div>
         ))}
       </motion.div>
     </motion.nav>

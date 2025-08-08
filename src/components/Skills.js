@@ -200,9 +200,9 @@ const Skills = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <h3>AWS Data Engineer Associate</h3>
-            <p>Amazon Web Services</p>
-            <span className="cert-date">2024</span>
+            <h3>DevOps Essentials</h3>
+            <p>IBM</p>
+            <span className="cert-date">Oct 2022</span>
           </motion.div>
           
           <motion.div
@@ -212,9 +212,9 @@ const Skills = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            <h3>Backend Developer Professional</h3>
-            <p>Meta</p>
-            <span className="cert-date">2023</span>
+            <h3>Operation Analytics</h3>
+            <p>Coursera</p>
+            <span className="cert-date">Oct 2022</span>
           </motion.div>
           
           <motion.div
@@ -224,9 +224,57 @@ const Skills = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
           >
-            <h3>DevOps Essentials</h3>
-            <p>IBM</p>
-            <span className="cert-date">2023</span>
+            <h3>Customer Analytics</h3>
+            <p>Coursera</p>
+            <span className="cert-date">Sep 2022</span>
+          </motion.div>
+          
+          <motion.div
+            className="certification-card"
+            whileHover={{ scale: 1.02 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+          >
+            <h3>Databases for Back-End Development by Meta</h3>
+            <p>Coursera</p>
+            <span className="cert-date">Sep 2022</span>
+          </motion.div>
+          
+          <motion.div
+            className="certification-card"
+            whileHover={{ scale: 1.02 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          >
+            <h3>People Analytics</h3>
+            <p>Coursera</p>
+            <span className="cert-date">Sep 2022</span>
+          </motion.div>
+          
+          <motion.div
+            className="certification-card"
+            whileHover={{ scale: 1.02 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+          >
+            <h3>Version Control by Meta</h3>
+            <p>Coursera</p>
+            <span className="cert-date">Sep 2022</span>
+          </motion.div>
+          
+          <motion.div
+            className="certification-card"
+            whileHover={{ scale: 1.02 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
+            <h3>SAS Visual Analytics and Base Badge</h3>
+            <p>SAS</p>
+            <span className="cert-date">Dec 2021</span>
           </motion.div>
         </div>
       </motion.div>

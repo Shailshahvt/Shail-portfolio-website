@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Home.css';
 
@@ -35,7 +34,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Frontend Engineer & Software Developer
+            Full Stack Developer passionate about building scalable applications and innovative solutions
           </motion.h2>
           
           <motion.p
@@ -44,8 +43,8 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I'm a Master's student in Computer Science at Virginia Tech with a passion for building 
-            user-centered web applications. Specializing in React, TypeScript, and modern frontend technologies.
+            I'm a recent graduate in Computer Science with experience in Full Stack Development and a passion for building 
+            user-centered web applications. Specializing in React, TypeScript, and modern development technologies.
           </motion.p>
 
           <motion.div
@@ -54,24 +53,22 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Link to="/projects">
-              <motion.button
-                className="btn btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View My Work
-              </motion.button>
-            </Link>
-            <Link to="/contact">
-              <motion.button
-                className="btn btn-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get In Touch
-              </motion.button>
-            </Link>
+            <motion.button
+              className="btn btn-primary"
+              onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View My Work
+            </motion.button>
+            <motion.button
+              className="btn btn-primary"
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get In Touch
+            </motion.button>
           </motion.div>
 
           <motion.div
@@ -110,7 +107,7 @@ const Home = () => {
             <div className="profile-circle">
               <img 
                 src={`${process.env.PUBLIC_URL}/images/shail-shah-profile.jpg`}
-                alt="Shail Shah - Frontend Engineer" 
+                alt="Shail Shah - Software Developer" 
                 className="profile-photo"
                 onError={(e) => {
                   e.target.style.display = 'none';
