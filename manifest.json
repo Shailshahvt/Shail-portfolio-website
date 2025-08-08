@@ -1,13 +1,7 @@
 {
   "short_name": "Shail Shah",
   "name": "Shail Shah - Portfolio",
-  "icons": [
-    {
-      "src": "favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ],
+  "icons": [],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#667eea",
