@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Shail-portfolio-website/static/css/main.bb8d94f3.css",
-    "main.js": "/Shail-portfolio-website/static/js/main.6f42bb11.js",
+    "main.css": "/Shail-portfolio-website/static/css/main.ce42e09c.css",
+    "main.js": "/Shail-portfolio-website/static/js/main.fb800d05.js",
     "static/js/453.a5b25d5b.chunk.js": "/Shail-portfolio-website/static/js/453.a5b25d5b.chunk.js",
     "index.html": "/Shail-portfolio-website/index.html",
-    "main.bb8d94f3.css.map": "/Shail-portfolio-website/static/css/main.bb8d94f3.css.map",
-    "main.6f42bb11.js.map": "/Shail-portfolio-website/static/js/main.6f42bb11.js.map",
+    "main.ce42e09c.css.map": "/Shail-portfolio-website/static/css/main.ce42e09c.css.map",
+    "main.fb800d05.js.map": "/Shail-portfolio-website/static/js/main.fb800d05.js.map",
     "453.a5b25d5b.chunk.js.map": "/Shail-portfolio-website/static/js/453.a5b25d5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb8d94f3.css",
-    "static/js/main.6f42bb11.js"
+    "static/css/main.ce42e09c.css",
+    "static/js/main.fb800d05.js"
   ]
 }
